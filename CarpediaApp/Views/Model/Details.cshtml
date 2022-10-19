@@ -1,0 +1,42 @@
+﻿@model CarpediaApp.Models.VehicleModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehicleModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MakeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MakeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelAbrv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelAbrv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ModelID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CarpediaApp.Models.VehicleMake>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>REGISTER your car by clicking 'Register' button below!</h3>
+
+<p>
+    @Html.ActionLink("REGISTER", "Create")
+</p>
+
+<p> Registered cars: </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MakeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MakeAbrv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MakeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MakeAbrv)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MakeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MakeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MakeID })
+        </td>
+    </tr>
+}
+
+</table>
