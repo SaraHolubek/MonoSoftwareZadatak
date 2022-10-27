@@ -20,7 +20,8 @@ namespace CarpediaApp.Controllers
             List<VehicleModel> makes = new List<VehicleModel>();
             makes = await LoadListForView();
             return (IActionResult)View(makes);
-        }
+        } 
+         
 
         private async Task<List<VehicleModel>> LoadListForView()
         {

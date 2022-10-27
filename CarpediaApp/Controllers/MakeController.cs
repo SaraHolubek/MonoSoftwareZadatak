@@ -22,6 +22,7 @@ namespace CarpediaApp.Controllers
             return (IActionResult)View(makes);
         }
 
+
         private async Task<List<VehicleMake>> LoadListForView()
         {
             return await db.VehicleMake.ToListAsync();
