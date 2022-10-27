@@ -15,9 +15,16 @@ namespace CarpediaApp.Controllers
         private vehicles_DBEntities db = new vehicles_DBEntities();
 
         // GET: Make
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(db.VehicleMake.ToList());
+            List<VehicleMake> makes = new List<VehicleMake>();
+            makes = await LoadListForView();
+            return (IActionResult)View(makes);
+        }
+
+        private async Task<List<VehicleMake>> LoadListForView()
+        {
+            return await db.VehicleMake.ToListAsync();
         }
 
         // GET: Make/Details/5
